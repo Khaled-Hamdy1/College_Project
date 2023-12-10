@@ -131,7 +131,7 @@ let user = JSON.parse(localStorage.getItem("user")) || "public";
 function renderData(search = "") {
   const arr = !search
     ? users[user].all
-    : users[user].all.filter((item) => item.src.includes(search));
+    : users[user].all.filter((item) => item.name.includes(search));
   let str = "";
   arr.forEach((photo) => {
     str += `
