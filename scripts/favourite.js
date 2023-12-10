@@ -17,11 +17,11 @@ function renderData() {
           class="flex gap-2 absolute flex-row-reverse right-2 top-2 image-buttons"
         >
           <button
-          onclick = "pressLike('${photo.id}')"
-          id = "like-btn${photo.id}"
-            class="w-10 h-10 flex items-center justify-center rounded-lg bg-white text-lg like-btn"
-          >
-          <i class="fa-solid fa-heart text-red-700"></i>
+            onclick = "pressLike('${photo.id}')"
+            id = "like-btn${photo.id}"
+              class="w-10 h-10 flex items-center justify-center rounded-lg bg-white text-lg like-btn"
+            >
+            <i class="fa-solid fa-heart text-red-700"></i>
           </button>
         </div>
         <div>
