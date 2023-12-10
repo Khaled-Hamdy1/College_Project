@@ -125,7 +125,8 @@ const wrapper = document.querySelector(".wrapper"),
   signupHeader = document.querySelector(".signup header"),
   loginHeader = document.querySelector(".login header"),
   signupForm = document.querySelector(".signup form"),
-  loginForm = document.querySelector(".login form");
+  loginForm = document.querySelector(".login form"),
+  video = document.getElementById("video");
 
 // get users from local storage
 const users = JSON.parse(localStorage.getItem("users")) || {
@@ -141,6 +142,8 @@ loginHeader.addEventListener("click", () => {
 signupHeader.addEventListener("click", () => {
   wrapper.classList.remove("active");
 });
+// reduce video speed
+(()=>{document.querySelector('video').playbackRate=0.5})();
 
 // Signup form submit
 signupForm.addEventListener("submit", (e) => {
