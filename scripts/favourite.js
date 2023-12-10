@@ -3,7 +3,7 @@ const photos = document.querySelector("main");
 const users = JSON.parse(localStorage.getItem("users")) || {
   public: { all: [], fav: [] },
 };
-const user = JSON.parse(localStorage.getItem("user")) || "public";
+const user = localStorage.getItem("user") || "public";
 
 function renderData() {
   const arr = users[user].all.filter((item) =>

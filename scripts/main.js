@@ -126,12 +126,13 @@ const photos = document.querySelector("main");
 let users = JSON.parse(localStorage.getItem("users")) || {
   public: { all: initialPhotoes, fav: [] },
 };
-let user = JSON.parse(localStorage.getItem("user")) || "public";
+let user = localStorage.getItem("user") || "public";
 
 function renderData(search = "") {
+  console.log(users);
   const arr = !search
-    ? users[user].all
-    : users[user].all.filter((item) => item.src.includes(search));
+    ? users[user]?.all
+    : users[user]?.all.filter((item) => item.src.includes(search));
   let str = "";
   arr.forEach((photo) => {
     str += `
@@ -204,6 +205,7 @@ function pressLike(id) {
 ////////////////////////Remove User////////////////////////////////
 function removeUser() {
   localStorage.setItem("user", "public");
+  user = "public";
   renderData();
 }
 
@@ -237,7 +239,7 @@ function previewImage(event) {
   reader.readAsDataURL(selectedFile);
 
   reader.onloadend = () => {
-    const user = JSON.parse(localStorage.getItem("user")) || "public";
+    const user = localStorage.getItem("user") || "public";
 
     users[user].all.push({
       id: users[user].all.length + 1,

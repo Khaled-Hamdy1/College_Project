@@ -6,9 +6,12 @@ const wrapper = document.querySelector(".wrapper"),
   loginForm = document.querySelector(".login form");
 
 // get users from local storage
-const users = JSON.parse(localStorage.getItem("users")) || [];
+const users = JSON.parse(localStorage.getItem("users")) || {
+  public: { all: [], fav: [] },
+};
 // get current user from local storage
-const user = JSON.parse(localStorage.getItem("user")) || "public";
+const user = localStorage.getItem("user") || "public";
+
 //** Event Listeners
 // switch login and signup forms animation
 loginHeader.addEventListener("click", () => {
@@ -26,17 +29,18 @@ signupForm.addEventListener("submit", (e) => {
     signupForm;
 
   // Check if username already exists
-  const userExists = users.find((user) => user.username === username);
+  const userExists = username in users;
 
   if (userExists) {
     toastr.error("Username already exists");
     return;
   }
+
   // add user to local storage
-  const user = { fullName, username, password, clothes: [] };
-  users.push(user);
+  const user = { fullName, password, all: [], fav: [] };
+  users[username] = user;
   localStorage.setItem("users", JSON.stringify(users));
-  localStorage.setItem("user", JSON.stringify(user));
+  localStorage.setItem("user", username);
 
   // redirect to login page
   window.location.href = "/views";
@@ -49,16 +53,14 @@ loginForm.addEventListener("submit", (e) => {
   let [{ value: username }, { value: password }] = loginForm;
 
   // check if username and password are correct
-  const user = users.find(
-    (user) => user.username === username && user.password === password
-  );
+  const user = users[username]?.password === password ? users[username] : null;
 
   if (!user) {
     toastr.error("Username or password is incorrect");
     return;
   }
 
-  localStorage.setItem("user", JSON.stringify(user));
+  localStorage.setItem("user", username);
   // redirect to home page
   window.location.href = "/views";
 });
