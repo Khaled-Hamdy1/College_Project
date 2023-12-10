@@ -149,6 +149,13 @@ function renderData(search = "") {
               : '<i class="fa-regular fa-heart"></i>'
           }
           </button>
+          <button
+          onclick = "deleteImage('${photo.id}')"
+          id = "delete-btn${photo.id}"
+            class="w-10 h-10 flex items-center justify-center rounded-lg bg-white text-lg trash-btn"
+          >
+          <i class="fa-regular fa-trash-can"></i>
+          </button>
         </div>
         <div>
           <img
@@ -166,10 +173,9 @@ function renderData(search = "") {
       </div>
       `;
   });
-  photos.innerHTML += str;
+  photos.innerHTML = str;
 }
 window.addEventListener("load", () => {
-  photos.innerHTML = "";
   handleAcount();
   renderData();
 });
@@ -179,7 +185,6 @@ const searchBtn = document.getElementById("form-submit");
 
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  photos.innerHTML = "";
   renderData(searchInput.value);
 });
 // //////////////////////like button/////////////////////////////
@@ -244,4 +249,13 @@ function previewImage(event) {
     localStorage.setItem("users", JSON.stringify(users));
     renderData();
   };
+}
+//////////////////////Delete Image///////////////////////
+function deleteImage(id) {
+  const filteredAllList = users[user].all.filter((item) => item.id != id);
+  const filteredFavList = users[user].fav.filter((item) => item != id)
+  users[user].all = filteredAllList;
+  users[user].fav = filteredFavList;
+  localStorage.setItem("users", JSON.stringify(users));
+  renderData();
 }
