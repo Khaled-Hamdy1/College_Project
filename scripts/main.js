@@ -1,29 +1,126 @@
 const initialPhotoes = [
-  { id: 1, src: "../images/wallpaperflare.com_wallpaper (2).jpg" },
-  { id: 2, src: "../images/wallpaperflare.com_wallpaper (1).jpg" },
-  { id: 3, src: "../images/wallpaperflare.com_wallpaper (3).jpg" },
-  { id: 4, src: "../images/wallpaperflare.com_wallpaper (4).jpg" },
-  { id: 5, src: "../images/wallpaperflare.com_wallpaper (5).jpg" },
-  { id: 6, src: "../images/wallpaperflare.com_wallpaper (6).jpg" },
-  { id: 7, src: "../images/wallpaperflare.com_wallpaper (7).jpg" },
-  { id: 8, src: "../images/wallpaperflare.com_wallpaper (8).jpg" },
-  { id: 9, src: "../images/wallpaperflare.com_wallpaper (9).jpg" },
-  { id: 10, src: "../images/wallpaperflare.com_wallpaper (10).jpg" },
-  { id: 11, src: "../images/wallpaperflare.com_wallpaper (11).jpg" },
-  { id: 12, src: "../images/wallpaperflare.com_wallpaper (12).jpg" },
-  { id: 13, src: "../images/wallpaperflare.com_wallpaper (13).jpg" },
-  { id: 14, src: "../images/wallpaperflare.com_wallpaper (14).jpg" },
-  { id: 15, src: "../images/wallpaperflare.com_wallpaper (15).jpg" },
-  { id: 16, src: "../images/wallpaperflare.com_wallpaper (16).jpg" },
-  { id: 17, src: "../images/wallpaperflare.com_wallpaper (17).jpg" },
-  { id: 18, src: "../images/wallpaperflare.com_wallpaper (18).jpg" },
-  { id: 19, src: "../images/wallpaperflare.com_wallpaper (19).jpg" },
-  { id: 20, src: "../images/wallpaperflare.com_wallpaper (20).jpg" },
-  { id: 21, src: "../images/wallpaperflare.com_wallpaper (21).jpg" },
-  { id: 22, src: "../images/wallpaperflare.com_wallpaper (22).jpg" },
-  { id: 23, src: "../images/wallpaperflare.com_wallpaper (23).jpg" },
-  { id: 24, src: "../images/wallpaperflare.com_wallpaper (24).jpg" },
+  {
+    id: 1,
+    src: "../images/wallpaperflare.com_wallpaper (2).jpg",
+    name: "Photo 1",
+  },
+  {
+    id: 2,
+    src: "../images/wallpaperflare.com_wallpaper (1).jpg",
+    name: "Photo 2",
+  },
+  {
+    id: 3,
+    src: "../images/wallpaperflare.com_wallpaper (3).jpg",
+    name: "Photo 3",
+  },
+  {
+    id: 4,
+    src: "../images/wallpaperflare.com_wallpaper (4).jpg",
+    name: "Photo 4",
+  },
+  {
+    id: 5,
+    src: "../images/wallpaperflare.com_wallpaper (5).jpg",
+    name: "Photo 5",
+  },
+  {
+    id: 6,
+    src: "../images/wallpaperflare.com_wallpaper (6).jpg",
+    name: "Photo 6",
+  },
+  {
+    id: 7,
+    src: "../images/wallpaperflare.com_wallpaper (7).jpg",
+    name: "Photo 7",
+  },
+  {
+    id: 8,
+    src: "../images/wallpaperflare.com_wallpaper (8).jpg",
+    name: "Photo 8",
+  },
+  {
+    id: 9,
+    src: "../images/wallpaperflare.com_wallpaper (9).jpg",
+    name: "Photo 9",
+  },
+  {
+    id: 10,
+    src: "../images/wallpaperflare.com_wallpaper (10).jpg",
+    name: "Photo 10",
+  },
+  {
+    id: 11,
+    src: "../images/wallpaperflare.com_wallpaper (11).jpg",
+    name: "Photo 11",
+  },
+  {
+    id: 12,
+    src: "../images/wallpaperflare.com_wallpaper (12).jpg",
+    name: "Photo 12",
+  },
+  {
+    id: 13,
+    src: "../images/wallpaperflare.com_wallpaper (13).jpg",
+    name: "Photo 13",
+  },
+  {
+    id: 14,
+    src: "../images/wallpaperflare.com_wallpaper (14).jpg",
+    name: "Photo 14",
+  },
+  {
+    id: 15,
+    src: "../images/wallpaperflare.com_wallpaper (15).jpg",
+    name: "Photo 15",
+  },
+  {
+    id: 16,
+    src: "../images/wallpaperflare.com_wallpaper (16).jpg",
+    name: "Photo 16",
+  },
+  {
+    id: 17,
+    src: "../images/wallpaperflare.com_wallpaper (17).jpg",
+    name: "Photo 17",
+  },
+  {
+    id: 18,
+    src: "../images/wallpaperflare.com_wallpaper (18).jpg",
+    name: "Photo 18",
+  },
+  {
+    id: 19,
+    src: "../images/wallpaperflare.com_wallpaper (19).jpg",
+    name: "Photo 19",
+  },
+  {
+    id: 20,
+    src: "../images/wallpaperflare.com_wallpaper (20).jpg",
+    name: "Photo 20",
+  },
+  {
+    id: 21,
+    src: "../images/wallpaperflare.com_wallpaper (21).jpg",
+    name: "Photo 21",
+  },
+  {
+    id: 22,
+    src: "../images/wallpaperflare.com_wallpaper (22).jpg",
+    name: "Photo 22",
+  },
+  {
+    id: 23,
+    src: "../images/wallpaperflare.com_wallpaper (23).jpg",
+    name: "Photo 23",
+  },
+  {
+    id: 24,
+    src: "../images/wallpaperflare.com_wallpaper (24).jpg",
+    name: "Photo 24",
+  },
 ];
+
 const photos = document.querySelector("main");
 
 let users = JSON.parse(localStorage.getItem("users")) || {
@@ -31,12 +128,10 @@ let users = JSON.parse(localStorage.getItem("users")) || {
 };
 let user = JSON.parse(localStorage.getItem("user")) || "public";
 
-
 function renderData(search = "") {
-  const arr =
-    search === ""
-      ? users[user].all
-      : users[user].all.filter((item) => item.includes(search));
+  const arr = !search
+    ? users[user].all
+    : users[user].all.filter((item) => item.src.includes(search));
   let str = "";
   arr.forEach((photo) => {
     str += `
@@ -65,7 +160,7 @@ function renderData(search = "") {
           <h1
             class="absolute left-1 bottom-2 capitalize text-white font-semibold text-sm image-buttons"
           >
-            ${photo.src}
+            ${photo.name}
           </h1>
         </div>
       </div>
@@ -79,12 +174,11 @@ window.addEventListener("load", () => {
   renderData();
 });
 // //////////////////Search//////////////////////
-const searchInput = document.querySelector("input");
-const searchBtn = document.querySelector("#form-submit");
+const searchInput = document.querySelector("input[data-search-input]");
+const searchBtn = document.getElementById("form-submit");
 
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log(searchInput.value);
   photos.innerHTML = "";
   renderData(searchInput.value);
 });
@@ -100,28 +194,26 @@ function pressLike(id) {
   } else {
     document.querySelector(`#like-btn${id}`).innerHTML =
       '<i class="fa-regular fa-heart"></i>';
-    
   }
   users[user].fav = favListFilter;
   localStorage.setItem("users", JSON.stringify(users));
 }
 
 ////////////////////////Remove User////////////////////////////////
-function removeUser(){
-  localStorage.setItem("user","public");
+function removeUser() {
+  localStorage.setItem("user", "public");
   renderData();
 }
 
 ///////////////////////Handle SignIn & SignOut////////////////////
 
-function handleAcount(){
+function handleAcount() {
   const signIn = document.querySelector("#signIn");
   const signOut = document.querySelector("#signOut");
-  if(user === "public"){
+  if (user === "public") {
     signIn.classList.remove("disabled-link");
     signOut.classList.add("disabled-link");
-  }
-  else{
+  } else {
     signIn.classList.add("disabled-link");
     signOut.classList.remove("disabled-link");
   }
@@ -131,15 +223,25 @@ function handleAcount(){
 function previewImage(event) {
   const fileInput = document.getElementById("customFile");
 
-  // Check if a file is selected
-  if (fileInput.files.length > 0) {
-    const selectedFile = fileInput.files[0];
-    const objectURL = URL.createObjectURL(selectedFile);
-    console.log(objectURL);
-    users[user].all.push({ id: users[user].all.length + 1, src: objectURL });
+  // Check if a file is not selected
+  if (!fileInput.files.length) {
+    alert("Please select an Image");
+    return;
+  }
+
+  const [selectedFile] = fileInput.files;
+  const reader = new FileReader();
+  reader.readAsDataURL(selectedFile);
+
+  reader.onloadend = () => {
+    const user = JSON.parse(localStorage.getItem("user")) || "public";
+
+    users[user].all.push({
+      id: users[user].all.length + 1,
+      name: selectedFile.name.split(".").at(-2),
+      src: reader.result,
+    });
     localStorage.setItem("users", JSON.stringify(users));
     renderData();
-  } else {
-    alert("Please select an Image");
-  }
+  };
 }
