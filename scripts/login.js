@@ -6,7 +6,9 @@ const wrapper = document.querySelector(".wrapper"),
   loginForm = document.querySelector(".login form");
 
 // get users from local storage
-const users = JSON.parse(localStorage.getItem("users")) || [];
+const users = JSON.parse(localStorage.getItem("users")) || {
+  public: { all: initialPhotoes, fav: [] },
+};
 // get current user from local storage
 const user = JSON.parse(localStorage.getItem("user")) || "public";
 //** Event Listeners
@@ -35,7 +37,7 @@ signupForm.addEventListener("submit", (e) => {
 
   // add user to local storage
   const user = { fullName, password, all: [], fav: [] };
-  users.push(user);
+  users[username] = user;
   localStorage.setItem("users", JSON.stringify(users));
   localStorage.setItem("user", JSON.stringify(user));
 
