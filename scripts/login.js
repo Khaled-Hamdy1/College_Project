@@ -26,14 +26,15 @@ signupForm.addEventListener("submit", (e) => {
     signupForm;
 
   // Check if username already exists
-  const userExists = users.find((user) => user.username === username);
+  const userExists = username in users;
 
   if (userExists) {
     toastr.error("Username already exists");
     return;
   }
+
   // add user to local storage
-  const user = { fullName, username, password, clothes: [] };
+  const user = { fullName, password, all: [], fav: [] };
   users.push(user);
   localStorage.setItem("users", JSON.stringify(users));
   localStorage.setItem("user", JSON.stringify(user));
@@ -49,9 +50,7 @@ loginForm.addEventListener("submit", (e) => {
   let [{ value: username }, { value: password }] = loginForm;
 
   // check if username and password are correct
-  const user = users.find(
-    (user) => user.username === username && user.password === password
-  );
+  const user = users[username]?.password === password ? users[username] : null;
 
   if (!user) {
     toastr.error("Username or password is incorrect");
