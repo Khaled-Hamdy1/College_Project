@@ -126,7 +126,8 @@ const wrapper = document.querySelector(".wrapper"),
   loginHeader = document.querySelector(".login header"),
   signupForm = document.querySelector(".signup form"),
   loginForm = document.querySelector(".login form"),
-  video = document.getElementById("video");
+  video = document.getElementById("video"),
+  audio = document.getElementById("audio");
 
 // get users from local storage
 const users = JSON.parse(localStorage.getItem("users")) || {
@@ -156,18 +157,21 @@ signupForm.addEventListener("submit", (e) => {
   const userExists = username in users;
 
   if (userExists) {
-    toastr.error("Username already exists");
+    audio.play();
+    alert("Username already exists");
     return;
+  } else {
+    audio.play();
+    alert("Account created successfully")
   }
 
   // add user to local storage
-  const user = { fullName, password, all: [], fav: [] };
-  users[username] = user;
+  users[username] = { fullName, password, all: [], fav: [] };
   localStorage.setItem("users", JSON.stringify(users));
-  localStorage.setItem("user", JSON.stringify(user));
+  localStorage.setItem("user", username);
 
   // redirect to login page
-  window.location.href = "/views";
+  window.location.href = "./views";
 });
 
 // Login form submit
@@ -180,7 +184,7 @@ loginForm.addEventListener("submit", (e) => {
   const user = users[username]?.password === password ? users[username] : null;
 
   if (!user) {
-    toastr.error("Username or password is incorrect");
+    alert("Username or password is incorrect");
     return;
   }
 
