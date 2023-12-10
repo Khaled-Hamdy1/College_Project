@@ -187,14 +187,16 @@ searchBtn.addEventListener("click", (e) => {
 function pressLike(id) {
   const favList = users[user].fav;
   const favListFilter = favList.filter((item) => item !== +id);
+
   if (favList.length === favListFilter.length) {
     favListFilter.push(+id);
-    document.querySelector(`#like-btn${id}`).innerHTML =
+    document.getElementById(`like-btn${id}`).innerHTML =
       '<i class="fa-solid fa-heart text-red-700"></i>';
   } else {
-    document.querySelector(`#like-btn${id}`).innerHTML =
+    document.getElementById(`like-btn${id}`).innerHTML =
       '<i class="fa-regular fa-heart"></i>';
   }
+
   users[user].fav = favListFilter;
   localStorage.setItem("users", JSON.stringify(users));
 }
@@ -208,8 +210,9 @@ function removeUser() {
 ///////////////////////Handle SignIn & SignOut////////////////////
 
 function handleAcount() {
-  const signIn = document.querySelector("#signIn");
-  const signOut = document.querySelector("#signOut");
+  const signIn = document.getElementById("signIn");
+  const signOut = document.getElementById("signOut");
+
   if (user === "public") {
     signIn.classList.remove("disabled-link");
     signOut.classList.add("disabled-link");
