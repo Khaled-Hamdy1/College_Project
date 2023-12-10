@@ -150,11 +150,11 @@ function renderData(search = "") {
           }
           </button>
           <button
-          onclick = "deleteImage('${photo.id}')"
-          id = "delete-btn${photo.id}"
+            onclick = "deleteImage('${photo.id}')"
+            id = "delete-btn${photo.id}"
             class="w-10 h-10 flex items-center justify-center rounded-lg bg-white text-lg trash-btn"
           >
-          <i class="fa-regular fa-trash-can"></i>
+            <i class="fa-regular fa-trash-can"></i>
           </button>
         </div>
         <div>
