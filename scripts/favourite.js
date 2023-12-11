@@ -126,13 +126,13 @@ const photos = document.querySelector("main");
 const users = JSON.parse(localStorage.getItem("users")) || {
   public: { all: initialPhotoes, fav: [] },
 };
-const user = localStorage.getItem("user") || "public";
+let user = localStorage.getItem("user") || "public";
 
 function renderData() {
   const arr = users[user].all.filter((item) =>
     users[user].fav.includes(item.id)
   );
-  if(!arr.length) return;
+  if (!arr.length) return;
   let str = "";
   arr.forEach((photo) => {
     str += `

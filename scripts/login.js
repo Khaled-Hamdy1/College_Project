@@ -145,7 +145,9 @@ signupHeader.addEventListener("click", () => {
   wrapper.classList.remove("active");
 });
 // reduce video speed
-(()=>{document.querySelector('video').playbackRate=0.5})();
+(() => {
+  document.querySelector("video").playbackRate = 0.5;
+})();
 
 // Signup form submit
 signupForm.addEventListener("submit", (e) => {
@@ -163,7 +165,7 @@ signupForm.addEventListener("submit", (e) => {
     return;
   } else {
     audio.play();
-    alert("Account created successfully")
+    alert("Account created successfully");
   }
 
   // add user to local storage
@@ -172,7 +174,7 @@ signupForm.addEventListener("submit", (e) => {
   localStorage.setItem("user", username);
 
   // redirect to login page
-  window.location.href = "./views";
+  window.location.href = "/views";
 });
 
 // Login form submit
