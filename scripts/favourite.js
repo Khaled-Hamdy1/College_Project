@@ -132,7 +132,16 @@ function renderData() {
   const arr = users[user].all.filter((item) =>
     users[user].fav.includes(item.id)
   );
-  if (!arr.length) return;
+  if (!arr.length) {
+    photos.innerHTML = `
+        <div
+        class="absolute flex justify-center items-center text-red h-[50vh] font-extrabold text-6xl"
+      >
+        No Favourites added
+      </div>
+    `;
+    return;
+  }
   let str = "";
   arr.forEach((photo) => {
     str += `

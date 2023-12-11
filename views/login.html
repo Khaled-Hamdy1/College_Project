@@ -23,8 +23,20 @@
         <header>Signup</header>
         <form>
           <input type="text" placeholder="Full name" required />
-          <input type="text" placeholder="Username" required />
-          <input type="password" placeholder="Password" required />
+          <input
+            type="text"
+            placeholder="Username"
+            pattern="[a-z]{4,8}"
+            title="Username must be 4-8 characters long and lowercase"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            pattern=".{8,}"
+            title="Password must be 8 characters long"
+            required
+          />
           <button type="submit" class="login-btn">Signup</button>
         </form>
       </div>
