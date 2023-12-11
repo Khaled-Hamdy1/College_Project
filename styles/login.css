@@ -7,9 +7,6 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-image: url("../images/login.jpg");
-  background-size: cover;
-  background-attachment: fixed;
   background-position: center;
   display: flex;
   align-items: center;
@@ -138,4 +135,14 @@ form .login-btn {
 }
 .back-login:hover {
   background: #333;
+}
+
+#video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
 }
