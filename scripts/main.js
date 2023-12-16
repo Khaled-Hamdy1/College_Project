@@ -129,11 +129,10 @@ let users = JSON.parse(localStorage.getItem("users")) || {
 let user = localStorage.getItem("user") || "public";
 
 function renderData(search = "") {
-  console.log(users);
   const arr = !search
     ? users[user].all
     : users[user].all.filter((item) => item.name.includes(search));
-  if(!arr.length) return;
+  if (!arr.length) return;
   let str = "";
   arr.forEach((photo) => {
     str += `

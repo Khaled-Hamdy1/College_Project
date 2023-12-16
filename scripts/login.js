@@ -174,7 +174,7 @@ signupForm.addEventListener("submit", (e) => {
   localStorage.setItem("user", username);
 
   // redirect to login page
-  window.location.href = "./index.html";
+  window.location.href = "./index.php";
 });
 
 // Login form submit
@@ -193,5 +193,5 @@ loginForm.addEventListener("submit", (e) => {
 
   localStorage.setItem("user", username);
   // redirect to home page
-  window.location.href = "./index.html";
+  window.location.href = "./index.php";
 });
