@@ -131,7 +131,7 @@ const wrapper = document.querySelector(".wrapper"),
 
 // get users from local storage
 const users = JSON.parse(localStorage.getItem("users")) || {
-  public: { all: [], fav: [] },
+  public: { all: initialPhotoes, fav: [] },
 };
 // get current user from local storage
 const user = localStorage.getItem("user") || "public";
