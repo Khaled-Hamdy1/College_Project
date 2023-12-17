@@ -25,7 +25,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
       $signup_error = false;
-      header("Location: ./index.php");
+      $checkUserQuery = "SELECT id, username, password FROM users WHERE username = '$username'";
+      $result = $conn->query($checkUserQuery);
+      $row = $result->fetch_assoc();
+      $userId = $row["id"];
+
+      echo "<script>
+          localStorage.setItem('userId', $userId);
+          setTimeout(() => window.location.href = './index.php', 500)
+        </script>";
     } else {
       $signup_error = true;
       echo "Error: " . $sql . "<br>" . $conn->error;

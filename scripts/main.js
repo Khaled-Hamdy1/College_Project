@@ -108,7 +108,7 @@ async function pressLike(id, isFav) {
 // --------------------- Remove User ---------------------
 function removeUser() {
   localStorage.removeItem("userId");
-  window.location.href = "../index.html";
+  window.location.href = "../views/login.php";
 }
 
 // --------------------- Handle SignIn & SignOut ---------------------
