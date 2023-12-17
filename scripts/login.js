@@ -149,49 +149,49 @@ signupHeader.addEventListener("click", () => {
   document.querySelector("video").playbackRate = 0.5;
 })();
 
-// Signup form submit
-signupForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  // get username and password
-  let [{ value: fullName }, { value: username }, { value: password }] =
-    signupForm;
+// // Signup form submit
+// signupForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   // get username and password
+//   let [{ value: fullName }, { value: username }, { value: password }] =
+//     signupForm;
 
-  // Check if username already exists
-  const userExists = username in users;
+//   // Check if username already exists
+//   const userExists = username in users;
 
-  if (userExists) {
-    audio.play();
-    alert("Username already exists");
-    return;
-  } else {
-    audio.play();
-    alert("Account created successfully");
-  }
+//   if (userExists) {
+//     audio.play();
+//     alert("Username already exists");
+//     return;
+//   } else {
+//     audio.play();
+//     alert("Account created successfully");
+//   }
 
-  // add user to local storage
-  users[username] = { fullName, password, all: [], fav: [] };
-  localStorage.setItem("users", JSON.stringify(users));
-  localStorage.setItem("user", username);
+//   // add user to local storage
+//   users[username] = { fullName, password, all: [], fav: [] };
+//   localStorage.setItem("users", JSON.stringify(users));
+//   localStorage.setItem("user", username);
 
-  // redirect to login page
-  window.location.href = "./index.php";
-});
+//   // redirect to login page
+//   window.location.href = "./index.php";
+// });
 
-// Login form submit
-loginForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  // get username and password from login form
-  let [{ value: username }, { value: password }] = loginForm;
+// // Login form submit
+// loginForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   // get username and password from login form
+//   let [{ value: username }, { value: password }] = loginForm;
 
-  // check if username and password are correct
-  const user = users[username]?.password === password ? users[username] : null;
+//   // check if username and password are correct
+//   const user = users[username]?.password === password ? users[username] : null;
 
-  if (!user) {
-    alert("Username or password is incorrect");
-    return;
-  }
+//   if (!user) {
+//     alert("Username or password is incorrect");
+//     return;
+//   }
 
-  localStorage.setItem("user", username);
-  // redirect to home page
-  window.location.href = "./index.php";
-});
+//   localStorage.setItem("user", username);
+//   // redirect to home page
+//   window.location.href = "./index.php";
+// });

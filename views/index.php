@@ -39,14 +39,14 @@
         </li>
         <li>
           <label for="customFile" class="custom-file-label" id="fileLabel">Upload</label>
-          <input type="file" id="customFile" class="custom-file-input" onchange="previewImage(event)" />
+          <input type="file" id="customFile" class="custom-file-input" onchange="previewImage()" />
         </li>
       </ul>
     </nav>
   </div>
   <header class="flex justify-center items-center relative w-full min-h-[500px] py-20 bg-black bg-opacity-50">
     <img src="../media/pexels-photo-15668622.jpeg" class="absolute top-0 left-0 w-full h-full object-cover -z-10" />
-    <div class="w-full max-w-[630px]">
+    <div class="max-w-[630px]" style="width: 90%">
       <h1 class="font-semibold text-4xl leading-10 -tracking-wide text-white fill-white">
         The best free stock photos, royalty free images & videos shared by
         creators.
@@ -63,8 +63,8 @@
     </div>
   </header>
   <main class=" mt-8 max-w-[95%] mx-auto">
-    <div class="absolute  justify-center items-center font-extrabold text-4xl max-w-[630px]""
-        style=" width: 80%; margin: auto;">
+    <div class="absolute  justify-center items-center font-extrabold text-4xl max-w-[630px]"
+      style=" width: 80%; margin: auto;">
       No photos yet.
       <label for="customFile" class="upload-link cursor-pointer">&nbsp;Upload your first photo&nbsp;</label>to get
       started!
@@ -74,7 +74,3 @@
 </body>
 
 </html>
-<!-- 
-  - handle empty values
-  - adding a table 
--->
