@@ -1,17 +1,8 @@
 <?php
-$conn_servername = "localhost";
-$conn_username = "root";
-$conn_password = "16497346285aA@";
-$conn_database = "collage_project";
-
-$conn = new mysqli($conn_servername, $conn_username, $conn_password, $conn_database);
+include_once("../php/config.php");
 
 $login_error = false;
 $signup_error = false;
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($_POST["action"] == "signup") {

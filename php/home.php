@@ -1,15 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "16497346285aA@";
-$database = "collage_project";
-
-$conn = new mysqli($servername, $username, $password, $database);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
+include_once("./config.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $jsonData = json_decode(file_get_contents('php://input'), true);
