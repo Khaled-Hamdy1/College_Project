@@ -26,16 +26,16 @@
       </a>
       <ul class="flex gap-x-8 mx-5 items-center">
         <li class="text-[16px] leading-6 font-semibold">
-          <a href="#" onclick="removeUser()" id="signOut">Sign Out</a>
+          <a target = "parent" href="#" onclick="removeUser()" id="signOut">Sign Out</a>
         </li>
         <li class="text-[16px] leading-6 font-semibold">
-          <a href="./login.php" id="signIn">Sign In</a>
+          <a target = "parent" href="../login.php" id="signIn">Sign In</a>
         </li>
         <li class="cursor-pointer text-[16px] leading-6 font-semibold hover:brightness-75">
-          <a href="./favourite.php">All</a>
+          <a target = "parent" href="../index.php">All</a>
         </li>
         <li class="cursor-pointer text-[16px] leading-6 font-semibold hover:brightness-75">
-          <a href="./favourite.php">Favourite</a>
+          <a target = "parent" href="../favourite.php">Favourite</a>
         </li>
       </ul>
     </nav>

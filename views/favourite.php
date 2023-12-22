@@ -37,7 +37,7 @@
           <a href="./index.php">All</a>
         </li>
         <li class="cursor-pointer text-[16px] leading-6 font-semibold hover:brightness-75">
-          <a href="./contact-us/index.php">Contact us</a>
+          <a href="./contact-us/index.php" target="_blank">Contact us</a>
         </li>
       </ul>
     </nav>

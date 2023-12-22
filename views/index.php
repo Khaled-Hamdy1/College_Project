@@ -35,7 +35,7 @@
           <a href="./favourite.php">Favourite</a>
         </li>
         <li class="cursor-pointer text-[16px] leading-6 font-semibold hover:brightness-75">
-          <a href="./contact-us/index.php">Contact us</a>
+          <a href="./contact-us/index.php" target="_blank">Contact us</a>
         </li>
         <li>
           <label for="customFile" class="custom-file-label" id="fileLabel">Upload</label>
