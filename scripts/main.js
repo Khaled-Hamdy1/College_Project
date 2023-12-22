@@ -1,6 +1,6 @@
 const photos = document.querySelector("main");
 
-let userId = localStorage.getItem("userId") || "public";
+let userId = localStorage.getItem("userId");
 let images = [];
 
 function renderData(images = [], searchValue = "") {
