@@ -26,9 +26,6 @@
       </a>
       <ul class="flex gap-x-8 mx-5 items-center">
         <li class="text-[16px] leading-6 font-semibold">
-          <a target = "parent" href="#" onclick="removeUser()" id="signOut">Sign Out</a>
-        </li>
-        <li class="text-[16px] leading-6 font-semibold">
           <a target = "parent" href="../login.php" id="signIn">Sign In</a>
         </li>
         <li class="cursor-pointer text-[16px] leading-6 font-semibold hover:brightness-75">
@@ -59,12 +56,6 @@
         signIn.classList.add("disabled-link");
         signOut.classList.remove("disabled-link");
       }
-    }
-
-    // --------------------- Remove User ---------------------
-    function removeUser() {
-      localStorage.removeItem("userId");
-      window.location.href = "../views/login.php";
     }
   </script>
 </body>
